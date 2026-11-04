@@ -1,0 +1,1010 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Sri Karthik Chigurupati</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Sri Karthik Chigurupati, embedded systems engineer in Hyderabad: PCB design, low-power firmware, wireless and FPGA. Projects, experience and contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;700&family=Funnel+Sans:wght@400;700&display=swap">
+<style>
+/* Hallmark · shape: Letter voice over an index of work (draw e58e2b; swapped the Letter's prose body for the dealt case, index and place, because the owner asked for less reading) · genre: atmospheric · theme: brand · redesign: full
+ * paper: oklch(16.9% 0.043 299) · accent: oklch(72.4% 0.187 49) · display: Funnel Display · body: Funnel Sans · hero: Poster · nav: slab · footer: mast · signature: a circuit board seen through a thermal camera behind the greeting
+ * axes: dark/grotesk-sans/warm · posture: Restrained · contrast: pass · fold: pass · job: hire · draw: e58e2b · imagery: photographs, library 1 (hero, pre-rendered in the ironbow palette), Commons stand-ins 2, owner's own 15, company product photos 4, team site 2 (4 Nov 2026) · v2.0.0 */
+/* Hallmark · added at the owner's request on 4 Nov 2026 · a products section (four exterior product photos from augeastechnologies.com, no internals) and a gallery in place of the two team frames · roles from his resume and his answers that day */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V5 · weakest: S, a dark engineer page could be anyone's; the hero shows a real board through the thermal palette and opens in the owner's own voice */
+/* Hallmark · waive 66 · two project pictures carry a small stock tag · the tag stops a recruiter reading library stand-ins as the owner's own drone or device */
+/* Hallmark · dropped https://commons.wikimedia.org/wiki/File:RAM_tracing_using_a_Xilinx_Spartan_From_Digilent.jpg, https://commons.wikimedia.org/wiki/File:Recirculating_Aquaculture_System_7.jpg, https://creativecommons.org/licenses/by-sa/2.0/ · credits for two stand-ins the owner's own photos replaced; the SolarMobil and SEVC links moved from the credits into the copy */
+/* Hallmark · dismissed 46a · 99.9% uptime, 50 km/h, +20% and +15% are the owner's figures from his resume, confirmed by him on 25 Oct 2026 */
+/* Hallmark · dropped https://unsplash.com/photos/macro-photography-of-black-circuit-board-FO7JIlwjOtU, https://unsplash.com/license · the Unsplash header photo is replaced by a library photograph, since Unsplash bars AI-driven selection (76) */
+/* Hallmark · answered F7 · the pill radius sits only on controls (icon links, the role switch, the round details and expand buttons); boxes and pictures take the 4px card radius */
+/* Hallmark · reworded headings "Selected work" to "Boards, firmware and FPGA designs" and "Let’s talk" to "Hiring an embedded engineer?" · the finish review named both as headings any portfolio could carry */
+/* Hallmark · reworded date ranges "Aug 2022 – Sep 2024" to "Aug 2022 to Sep 2024", "Floyd–Steinberg" to "Floyd-Steinberg", straight quotes to curly · 19 names dashes */
+
+:root {
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem); --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem); --text-poster: clamp(3rem, 9vw, 8.5rem);
+  --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --color-error: oklch(52% 0.19 27); --color-success: oklch(50% 0.12 150);
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+  /* brand: the thermal palette the owner approved, a violet-black ground and one ember accent */
+  --color-paper: oklch(16.9% 0.043 299); --color-paper-2: oklch(21.1% 0.063 299); --color-paper-3: oklch(25.6% 0.085 300);
+  --color-ink: oklch(97.3% 0.02 70); --color-ink-2: oklch(79.2% 0.033 329); --color-muted: oklch(69% 0.042 322);
+  --color-rule: oklch(31.6% 0.086 301);
+  --color-accent: oklch(72.4% 0.187 49); --color-accent-ink: oklch(16.7% 0.032 45); --color-focus: oklch(75% 0.19 52);
+  --color-scrim: oklch(16.9% 0.043 299 / 0.9); --color-veil: oklch(16.9% 0.043 299 / 0.78); --color-shade: oklch(10% 0.03 299 / 0.7);
+  --font-display: "Funnel Display", ui-sans-serif, system-ui, sans-serif; --font-body: "Funnel Sans", ui-sans-serif, system-ui, sans-serif; --font-outlier: var(--font-body);
+  --radius-card: 4px; --radius-pill: 999px; --rule-hair: 1px; --shadow-card: none;
+  --tracking-display: -0.03em; --display-weight: 700;
+  --nav-h: 72px;
+  color-scheme: dark;
+}
+
+/* base (Hallmark scaffold) */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+html { scrollbar-color: var(--color-muted) var(--color-paper); scroll-padding-top: var(--space-3xl); scroll-behavior: smooth; background: var(--color-paper); }
+body { margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-md); line-height: 1.55; -webkit-font-smoothing: antialiased; caret-color: var(--color-accent); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: var(--z-sticky-nav); background: var(--color-paper-2); }
+::selection { background: color-mix(in oklab, var(--color-accent) 22%, transparent); color: var(--color-ink); }
+:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.16em; }
+h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: var(--display-weight); font-synthesis: none; letter-spacing: var(--tracking-display); line-height: 1.05; overflow-wrap: break-word; min-width: 0; text-wrap: balance; }
+h1 { max-width: 20ch; font-size: var(--text-display); } h2 { max-width: 30ch; font-size: var(--text-section); } h3 { max-width: 40ch; font-size: var(--text-title); line-height: 1.2; }
+.lead { font-size: var(--text-lead); line-height: 1.45; max-width: 52ch; }
+p { margin: 0; text-wrap: pretty; }
+p:not([class]) { max-width: 65ch; }
+ul, ol, dl, dd, figure { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+img, video { max-width: 100%; height: auto; display: block; }
+svg { display: block; }
+[hidden] { display: none !important; }
+button, input, select, textarea { font: inherit; }
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: max(var(--gutter), env(safe-area-inset-left, 0px)) max(var(--gutter), env(safe-area-inset-right, 0px)); box-sizing: border-box; }
+.num, .figure, td.num { font-variant-numeric: tabular-nums; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+[data-slot] { position: relative; overflow: hidden; background: linear-gradient(160deg, var(--color-paper-2), var(--color-paper-3)); }
+[data-slot] > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; outline: 1px solid color-mix(in oklab, var(--color-ink) 8%, transparent); outline-offset: -1px; }
+[data-slot]:has(> img) > :not(img):not([data-keep]) { display: none !important; }
+@media (max-width: 60rem) { :root { --gutter: 24px; --section-gap-s: 80px; --section-gap: 96px; --section-gap-l: 120px; --nav-h: 64px; } }
+@media (max-width: 40rem) { :root { --gutter: 16px; --section-gap-s: 56px; --section-gap: 72px; --section-gap-l: 96px; --gap-columns: 16px; } }
+
+/* controls, all eight states */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: 48px; padding: 0 var(--space-lg); border: 1px solid var(--color-accent); border-radius: var(--radius-pill); background: var(--color-accent); color: var(--color-accent-ink); font: 700 var(--text-md)/1 var(--font-body); white-space: nowrap; text-decoration: none; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+.btn:hover { background: var(--color-ink); border-color: var(--color-ink); }
+.btn:active { transform: translateY(1px); }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; }
+.btn--quiet { background: transparent; color: var(--color-ink); border-color: var(--color-rule); }
+.btn--quiet:hover { background: var(--color-paper-3); border-color: var(--color-muted); }
+.btn--sm { min-height: 44px; padding: 0 var(--space-md); }
+.text-link { display: inline-flex; align-items: center; gap: var(--space-xs); min-height: 48px; color: var(--color-ink); font-weight: 700; text-decoration: underline; text-decoration-color: var(--color-muted); cursor: pointer; transition: text-decoration-color var(--dur-short) var(--ease-out); }
+.text-link:hover { text-decoration-color: var(--color-accent); }
+.text-link:active { transform: translateY(1px); }
+.icon-link { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: var(--radius-pill); color: var(--color-ink-2); transition: color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out); }
+.icon-link:hover { color: var(--color-ink); background: var(--color-paper-3); }
+.icon-link:active { transform: translateY(1px); }
+.seg { display: inline-flex; gap: var(--space-2xs); padding: var(--space-2xs); border-radius: var(--radius-pill); background: var(--color-paper); border: 1px solid var(--color-rule); }
+.seg button { min-height: 40px; padding: 0 var(--space-md); border: 0; border-radius: var(--radius-pill); background: transparent; color: var(--color-ink-2); font-family: var(--font-body); font-weight: 400; font-size: 1rem; line-height: 1; white-space: nowrap; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out); }
+.seg button:hover { color: var(--color-ink); background: var(--color-paper-3); }
+.seg button:active { transform: translateY(1px); }
+.seg button[aria-pressed="true"] { background: var(--color-paper-3); color: var(--color-ink); font-weight: 700; box-shadow: inset 0 0 0 1px var(--color-ink-2); }
+.seg button:disabled { opacity: 0.55; cursor: not-allowed; }
+.seg .s { display: none; }
+.focus { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs) var(--space-sm); }
+.focus-label { color: var(--color-ink-2); white-space: nowrap; }
+
+/* nav: a slab, the wordmark, the role switch and the links out */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: var(--z-sticky-nav); background: var(--color-paper-2); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.nav .container { display: flex; align-items: center; gap: var(--space-lg); min-height: var(--nav-h); }
+.wordmark { font: 700 var(--text-lg)/1 var(--font-display); letter-spacing: -0.01em; text-decoration: none; white-space: nowrap; }
+.wordmark:hover { color: var(--color-accent); }
+.nav .focus { margin-inline: auto; }
+.nav-end { display: flex; align-items: center; gap: var(--space-2xs); margin-left: auto; }
+.nav-end .btn { margin-left: var(--space-xs); }
+@media (min-width: 61rem) { .nav-end { margin-left: 0; } }
+@media (max-width: 80rem) { .nav .focus-label, .nav-end .icon-link { display: none; } }
+@media (max-width: 61rem) { .nav .focus { display: none; } .nav-end .icon-link { display: inline-grid; } }
+@media (max-width: 30rem) { .nav-end .icon-link { display: none; } .wordmark { font-size: var(--text-md); } }
+
+/* hero: Poster, the thermal board full-bleed, the greeting low and left */
+.hero { position: relative; isolation: isolate; display: grid; align-items: end; min-height: max(560px, calc(100dvh - var(--nav-h))); overflow: clip; }
+.thermal { position: absolute; inset: 0; z-index: -1; background: var(--color-paper); }
+.thermal img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%; animation: warm 800ms var(--ease-out) both; }
+@keyframes warm { from { opacity: 0.35; } to { opacity: 1; } }
+.thermal::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--color-scrim) 0%, var(--color-veil) 30%, transparent 70%), linear-gradient(0deg, var(--color-paper) 0%, transparent 34%); }
+.hero-in { padding-block: var(--space-3xl); display: grid; gap: var(--space-lg); justify-items: start; }
+.hero h1 { font-size: var(--text-poster); line-height: 0.92; letter-spacing: -0.035em; max-width: 11ch; }
+.hero .lead { font-size: clamp(1.25rem, 0.9vw + 1rem, 1.875rem); line-height: 1.3; max-width: 30ch; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-lg); margin-top: var(--space-xs); }
+@media (max-width: 60rem) {
+  .hero { min-height: max(520px, calc(92dvh - var(--nav-h))); }
+  .thermal::after { background: linear-gradient(0deg, var(--color-paper) 0%, var(--color-scrim) 30%, var(--color-veil) 55%, transparent 90%); }
+  .hero-in { padding-block: var(--space-2xl); }
+  .thermal img { object-position: 40% 45%; }
+}
+
+/* sections */
+.section { padding-block: var(--section-gap) 0; scroll-margin-top: var(--nav-h); }
+.section--s { padding-block-start: var(--section-gap-s); }
+.section--l { padding-block-start: var(--section-gap-l); }
+.head-split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-md) var(--gap-columns); align-items: end; margin-bottom: var(--space-2xl); }
+.head-split .lead { color: var(--color-ink-2); }
+@media (max-width: 60rem) { .head-split { grid-template-columns: minmax(0, 1fr); margin-bottom: var(--space-xl); } }
+.pts { display: grid; gap: var(--space-xs); }
+.pts li { position: relative; padding-left: var(--space-lg); }
+.pts li::before { content: ""; position: absolute; left: var(--space-2xs); top: 0.65em; width: 6px; height: 6px; border-radius: 1px; background: var(--color-accent); }
+.stack { color: var(--color-muted); }
+.caption { margin-top: var(--space-sm); font-size: var(--text-sm); color: var(--color-ink-2); }
+.stock-tag { position: absolute; right: var(--space-xs); top: var(--space-xs); z-index: 2; padding: var(--space-2xs) var(--space-xs); border-radius: var(--radius-card); background: var(--color-shade); color: var(--color-ink-2); font-size: var(--text-xs); line-height: 1.2; }
+
+/* about: where he is, the portrait beside it */
+.about-in { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-2xl) var(--gap-columns); align-items: center; }
+.portrait { aspect-ratio: 4 / 5; min-height: 440px; max-width: 100%; border-radius: var(--radius-card); }
+.portrait .initials { position: absolute; inset: 0; display: grid; place-items: center; font: 700 clamp(5rem, 10vw, 9rem)/1 var(--font-display); letter-spacing: -0.04em; color: var(--color-paper); -webkit-text-stroke: 1px var(--color-rule); }
+.about-text { display: grid; gap: var(--space-lg); }
+.about-text .lead { color: var(--color-ink-2); }
+.about-text .open-to { font-size: var(--text-title); font-family: var(--font-display); font-weight: 700; letter-spacing: -0.01em; }
+@media (max-width: 60rem) { .about-in { grid-template-columns: minmax(0, 1fr); } .portrait { min-height: 0; width: min(100%, 360px); } }
+@media (max-width: 40rem) { .portrait:not(:has(> img)) { order: 2; width: 160px; } }
+
+/* case: one project opened */
+.case-switch { display: none; margin-bottom: var(--space-xl); }
+@media (max-width: 61rem) { .case-switch { display: flex; } .case-switch .seg { display: flex; width: 100%; } .case-switch .seg button { flex: 1; padding: 0 var(--space-xs); } }
+@media (max-width: 30rem) { .seg .l { display: none; } .seg .s { display: inline; } }
+.case-item { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-2xl) var(--gap-columns); align-items: center; }
+.case-photo { position: relative; overflow: hidden; aspect-ratio: 5 / 4; min-height: 440px; max-width: 100%; border-radius: var(--radius-card); }
+.case-photo canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.case-photo .inset { position: absolute; right: var(--space-md); bottom: var(--space-md); z-index: 2; width: 38%; aspect-ratio: 5 / 4; overflow: hidden; border-radius: var(--radius-card); outline: var(--space-2xs) solid var(--color-paper); }
+.case-photo .inset img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.case-photo .inset-cap { position: absolute; left: var(--space-2xs); bottom: var(--space-2xs); padding: var(--space-2xs) var(--space-xs); border-radius: var(--radius-card); background: var(--color-shade); color: var(--color-ink); font-size: var(--text-xs); line-height: 1.2; white-space: nowrap; }
+@media (max-width: 40rem) { .case-photo .inset { width: 44%; right: var(--space-sm); bottom: var(--space-sm); } }
+.case-text .meta a, .pts a { text-decoration-color: var(--color-muted); transition: text-decoration-color var(--dur-short) var(--ease-out); }
+.case-text .meta a:hover, .pts a:hover { text-decoration-color: var(--color-accent); }
+.case-text { display: grid; gap: var(--space-lg); align-content: center; }
+.case-text h2 { font-size: var(--text-display-s); max-width: 14ch; }
+.case-text .meta { color: var(--color-ink-2); }
+.case-figs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg) var(--gap-columns); padding-block: var(--space-lg); border-block: var(--rule-hair) solid var(--color-rule); }
+.case-figs div { display: flex; flex-direction: column-reverse; gap: var(--space-2xs); }
+.case-figs dd { font: 700 var(--text-2xl)/1 var(--font-display); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.case-figs dt { color: var(--color-ink-2); font-size: var(--text-sm); }
+@media (max-width: 60rem) { .case-item { grid-template-columns: minmax(0, 1fr); } .case-photo { min-height: 0; } }
+
+/* augeas: four products, a picture and two lines each */
+.prods { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-2xl) var(--gap-columns); }
+.prod { display: grid; gap: var(--space-xs); align-content: start; }
+.prod-pic { aspect-ratio: 4 / 3; max-width: 100%; border-radius: var(--radius-card); margin-bottom: var(--space-sm); }
+.prod h3 { font-size: var(--text-title); }
+.prod h3 a { text-decoration: none; }
+.prod h3 a:hover { text-decoration: underline; text-decoration-color: var(--color-accent); }
+.prod-what { color: var(--color-ink-2); }
+@media (max-width: 64rem) { .prods { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 40rem) { .prods { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); } }
+
+/* work: the index of projects */
+.index { border-top: var(--rule-hair) solid var(--color-rule); }
+.row { position: relative; display: grid; grid-template-columns: 176px minmax(0, 1fr) minmax(0, 12rem) minmax(0, 15rem) 32px; gap: var(--space-lg); align-items: center; padding-block: var(--space-lg); border-bottom: var(--rule-hair) solid var(--color-rule); transition: background-color var(--dur-short) var(--ease-out); }
+.row:hover { background: var(--color-paper-2); }
+.row:has(.open:focus-visible) { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.row-pic { position: relative; overflow: hidden; aspect-ratio: 4 / 3; border-radius: var(--radius-card); max-width: 100%; }
+.row-pic canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.row-pic .stock-tag { right: var(--space-2xs); top: var(--space-2xs); }
+.row h3 { font-size: var(--text-title); }
+.row-main p { margin-top: var(--space-2xs); color: var(--color-ink-2); }
+.row-meta, .row-stack { font-size: var(--text-sm); color: var(--color-ink-2); }
+.row-stack { color: var(--color-muted); }
+.row-go { width: 32px; height: 32px; display: grid; place-items: center; padding: 0; border-radius: var(--radius-pill); border: 1px solid var(--color-rule); background: transparent; color: var(--color-ink-2); cursor: pointer; transition: border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out); }
+.row-go:active { transform: translateY(1px); }
+.row-go:disabled { opacity: 0.55; cursor: not-allowed; }
+.row:hover .row-go { border-color: var(--color-accent); color: var(--color-accent); }
+.open::after { content: ""; position: absolute; inset: 0; z-index: 3; }
+.index.shuffle > .row { animation: settle var(--dur-long) var(--ease-out) both; }
+@keyframes settle { from { opacity: 0.4; } to { opacity: 1; } }
+@media (max-width: 60rem) {
+  .row { grid-template-columns: 128px minmax(0, 1fr); gap: var(--space-xs) var(--space-md); align-items: start; }
+  .row-pic { grid-row: span 3; }
+  .row-meta, .row-stack { grid-column: 2; }
+  .row-go { grid-column: 2; justify-self: start; }
+}
+
+/* leading teams: one wide frame, then the gallery in threes */
+.gal { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--gap-columns); }
+.gal figure { grid-column: span 2; aspect-ratio: 4 / 3; max-width: 100%; border-radius: var(--radius-card); }
+.gal .g-half { grid-column: span 3; aspect-ratio: 16 / 9; }
+.gal .g-full { grid-column: 1 / -1; aspect-ratio: 21 / 9; min-height: 360px; }
+@media (max-width: 60rem) { .gal { grid-template-columns: repeat(2, minmax(0, 1fr)); } .gal figure, .gal .g-half { grid-column: span 1; aspect-ratio: 4 / 3; } .gal .g-full { grid-column: 1 / -1; aspect-ratio: 16 / 10; min-height: 0; } }
+@media (max-width: 40rem) { .gal { grid-template-columns: minmax(0, 1fr); } }
+.gal figcaption { position: absolute; left: var(--space-sm); bottom: var(--space-sm); z-index: 2; padding: var(--space-2xs) var(--space-sm); border-radius: var(--radius-card); background: var(--color-shade); color: var(--color-ink); font-size: var(--text-sm); }
+
+/* the résumé band: experience, skills and education on one lighter surface */
+.band { margin-top: var(--section-gap); padding-block: var(--section-gap-s); background: var(--color-paper-2); color: var(--color-ink); border-block: var(--rule-hair) solid var(--color-rule); }
+.band .section { padding-block-start: var(--space-3xl); }
+.band .section:first-child { padding-block-start: 0; }
+
+/* experience */
+.xp { border-top: var(--rule-hair) solid var(--color-rule); }
+.job { border-bottom: var(--rule-hair) solid var(--color-rule); }
+.job summary { list-style: none; display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 4fr) minmax(0, 4fr) 32px; gap: var(--space-xs) var(--gap-columns); align-items: baseline; padding-block: var(--space-lg); cursor: pointer; }
+.job summary::-webkit-details-marker { display: none; }
+.job summary:hover .job-role { color: var(--color-accent); }
+.job summary:focus-visible { outline-offset: 4px; }
+.job-when { color: var(--color-ink-2); font-variant-numeric: tabular-nums; }
+.job-role { display: block; font: 700 var(--text-title)/1.2 var(--font-display); letter-spacing: -0.01em; transition: color var(--dur-short) var(--ease-out); }
+.job-org { color: var(--color-ink-2); }
+.job-sum { color: var(--color-ink-2); }
+.job.on .job-when { color: var(--color-accent); }
+.chev { align-self: center; width: 32px; height: 32px; display: grid; place-items: center; border-radius: var(--radius-pill); border: 1px solid var(--color-rule); transition: transform var(--dur-short) var(--ease-out); }
+.job[open] .chev { transform: rotate(45deg); }
+.job .pts { padding: 0 0 var(--space-xl); margin-left: calc(3 / 11 * 100% + var(--gap-columns)); max-width: 70ch; }
+@media (max-width: 60rem) {
+  .job summary { grid-template-columns: minmax(0, 1fr) 32px; }
+  .job-when, .job-sum { grid-column: 1; }
+  .chev { grid-column: 2; grid-row: 1; }
+  .job .pts { margin-left: 0; }
+}
+
+/* skills: set as type */
+.skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-xl) var(--space-2xl); }
+.sk { display: grid; gap: var(--space-xs); padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); }
+.sk h3 { font-size: var(--text-title); transition: color var(--dur-short) var(--ease-out); }
+.sk p { font-size: var(--text-lead); line-height: 1.45; color: var(--color-ink-2); }
+.sk.on { border-top-color: var(--color-accent); }
+.sk.on h3 { color: var(--color-accent); }
+@media (max-width: 60rem) { .skills { grid-template-columns: minmax(0, 1fr); } }
+
+/* education and awards */
+.ea { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-2xl) var(--gap-columns); }
+.ea h3 { margin-bottom: var(--space-md); }
+.rows li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-md); padding-block: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); }
+.rows small { display: block; margin-top: var(--space-2xs); color: var(--color-ink-2); font-size: var(--text-sm); }
+.rows .yr { color: var(--color-ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+table.awards { width: 100%; border-collapse: collapse; }
+table.awards th, table.awards td { text-align: left; vertical-align: top; padding: var(--space-md) var(--space-md) var(--space-md) 0; border-top: var(--rule-hair) solid var(--color-rule); }
+table.awards th { width: 6rem; color: var(--color-ink-2); font-weight: 400; font-variant-numeric: tabular-nums; }
+.fine { margin-top: var(--space-lg); color: var(--color-ink-2); max-width: 60ch; }
+@media (max-width: 60rem) { .ea { grid-template-columns: minmax(0, 1fr); } }
+
+/* footer: a mast, the contact close, the wordmark large */
+.mast { background: var(--color-paper); color: var(--color-ink); scroll-margin-top: var(--nav-h); }
+.mast-top { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-xl) var(--gap-columns); padding-block: var(--space-3xl) var(--space-2xl); }
+.mast h2 { font-size: var(--text-display); }
+.mast-contact { display: grid; gap: var(--space-lg); align-content: start; }
+.mast-contact .lead { color: var(--color-ink-2); }
+.mail { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-md); }
+.mail a { font: 700 clamp(1.0625rem, 4.4vw, 1.5625rem)/1.2 var(--font-display); text-decoration-color: var(--color-accent); text-underline-offset: 0.2em; white-space: nowrap; user-select: all; -webkit-user-select: all; }
+.mast-links { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-xl); }
+.mast-links a { display: inline-flex; min-height: 44px; align-items: center; text-decoration-color: var(--color-muted); }
+.mast-links a:hover { text-decoration-color: var(--color-accent); }
+.mast-word { font: 700 clamp(2rem, 7.1vw, 6.5rem)/0.9 var(--font-display); letter-spacing: -0.04em; color: var(--color-ink); padding-bottom: var(--space-lg); white-space: nowrap; overflow: hidden; }
+.mast-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-sm) var(--space-xl); padding-block: var(--space-lg) var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); color: var(--color-ink-2); font-size: var(--text-sm); }
+.mast-nav { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-lg); }
+.mast-nav a { text-decoration: none; }
+.mast-nav a:hover { color: var(--color-ink); text-decoration: underline; }
+.credits { padding-bottom: var(--space-xl); color: var(--color-muted); font-size: var(--text-sm); line-height: 1.5; max-width: 110ch; }
+.credits a { color: var(--color-ink-2); }
+@media (max-width: 60rem) { .mast-top { grid-template-columns: minmax(0, 1fr); } }
+
+/* project details dialog */
+dialog.detail { width: min(760px, calc(100% - var(--space-xl))); max-height: calc(100% - var(--space-xl)); padding: 0; border: 1px solid var(--color-rule); border-radius: var(--radius-card); background: var(--color-paper-2); color: var(--color-ink); overflow: auto; }
+dialog.detail::backdrop { background: var(--color-shade); }
+dialog.detail[open] { animation: rise var(--dur-long) var(--ease-out); }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.d-media { position: relative; aspect-ratio: 16 / 9; max-width: 100%; }
+.d-media figure, .d-media canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.d-media figure > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.d-body { padding: var(--space-lg) var(--space-xl) var(--space-xl); display: grid; gap: var(--space-md); }
+.d-meta { color: var(--color-ink-2); }
+.d-body h3 { font-size: var(--text-2xl); }
+.d-stats { display: flex; flex-wrap: wrap; gap: var(--space-sm) var(--space-xl); }
+.d-stats li { display: flex; flex-direction: column; }
+.d-stats b { font: 700 var(--text-xl)/1.1 var(--font-display); }
+.d-stats span { font-size: var(--text-sm); color: var(--color-ink-2); }
+.d-stack { color: var(--color-muted); }
+.d-close { position: absolute; right: var(--space-sm); top: var(--space-sm); z-index: 5; width: 44px; height: 44px; border-radius: var(--radius-pill); border: 0; background: var(--color-shade); color: var(--color-ink); display: grid; place-items: center; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out); }
+.d-close:hover { background: var(--color-accent); color: var(--color-accent-ink); }
+.d-close:active { transform: translateY(1px); }
+
+.toast { position: fixed; left: 50%; bottom: calc(var(--space-lg) + env(safe-area-inset-bottom, 0px)); z-index: var(--z-toast); transform: translate(-50%, var(--space-md)); opacity: 0; pointer-events: none; max-width: calc(100% - var(--space-xl)); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-card); background: var(--color-ink); color: var(--color-paper); font-weight: 700; transition: opacity var(--dur-short) var(--ease-out), transform var(--dur-short) var(--ease-out); }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* the role switch labels stay at body size wherever they sit */
+.seg .l, .seg .s, .l, .s { font-size: 1rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  *:not(.keep-motion), *:not(.keep-motion)::before, *:not(.keep-motion)::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+</style>
+
+<header class="nav" id="nav">
+  <div class="container">
+    <a class="wordmark" href="#top" data-scroll aria-label="Sri Karthik Chigurupati, back to top">Sri Karthik Chigurupati</a>
+    <div class="focus">
+      <span class="focus-label" id="focus-hero">Show my work for</span>
+      <div class="seg" role="group" aria-labelledby="focus-hero">
+        <button type="button" id="lens-e1" data-lens-btn="e" aria-pressed="true">Embedded</button>
+        <button type="button" id="lens-f1" data-lens-btn="f" aria-pressed="false"><span class="l">FPGA &amp; RTL</span><span class="s">FPGA</span></button>
+        <button type="button" id="lens-d1" data-lens-btn="d" aria-pressed="false"><span class="l">Project delivery</span><span class="s">Delivery</span></button>
+      </div>
+    </div>
+    <div class="nav-end">
+      <a class="icon-link" href="https://www.linkedin.com/in/sri-karthik-c-a5b190215/" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.83v1.54h.06c.53-1 1.84-2.05 3.79-2.05 4.05 0 4.8 2.67 4.8 6.13V21h-4v-4.98c0-1.19-.02-2.72-1.66-2.72-1.66 0-1.92 1.3-1.92 2.63V21h-4V9.75Z"/></svg>
+      </a>
+      <a class="icon-link" href="https://github.com/srikarthik0601" target="_blank" rel="noopener" aria-label="GitHub profile">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+      </a>
+      <a class="btn btn--quiet btn--sm" href="Sri_Karthik_Chigurupati_Resume.pdf" download data-resume>Resume</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- hero: Poster -->
+  <section class="hero" aria-labelledby="hero-head">
+    <div class="thermal" aria-hidden="true"><img id="thermal" src="img/hero-thermal.jpg" width="2000" height="1250" alt="" fetchpriority="high"></div>
+    <div class="container hero-in">
+      <h1 id="hero-head">Hello, I’m Sri Karthik Chigurupati.</h1>
+      <p class="lead" data-show="e">I build embedded hardware, from schematic to tested board.</p>
+      <p class="lead" data-show="f" hidden>I write Verilog for FPGAs and prove it on real hardware.</p>
+      <p class="lead" data-show="d" hidden>I get hardware built across partners, suppliers and teams.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#contact" data-scroll>Email me</a>
+        <a class="text-link" href="Sri_Karthik_Chigurupati_Resume.pdf" download data-resume>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Download resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- where he is -->
+  <section class="section" id="about" aria-labelledby="h-about">
+    <div class="container about-in">
+      <figure class="portrait" data-slot="headshot" data-photo="headshot.jpg" data-alt="Sri Karthik Chigurupati in a dark suit and red tie, in front of a lit campus building at night">
+        <img src="img/headshot.jpg" width="760" height="950" alt="Sri Karthik Chigurupati in a dark suit and red tie, in front of a lit campus building at night">
+        <span class="initials" aria-hidden="true">SK</span>
+      </figure>
+      <div class="about-text">
+        <h2 id="h-about">Based in Hyderabad, open to relocation.</h2>
+        <p class="lead">Electronics Engineer at Augeas Technologies. B.Tech in Electronics and Communication, Manipal Institute of Technology, 2025.</p>
+        <p class="open-to">Open to embedded and hardware roles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- the products he works on now -->
+  <section class="section" id="augeas" aria-labelledby="h-augeas">
+    <div class="container">
+      <div class="head-split">
+        <h2 id="h-augeas">What I build at Augeas</h2>
+        <p class="lead">Four products I work on as an Electronics Engineer, from cold plasma to home safety.</p>
+      </div>
+      <div class="prods">
+        <article class="prod">
+          <figure class="prod-pic" data-slot="prod-pk" data-photo="plasma-knife.jpg" data-alt="The Plasma Knife running, with cold plasma glowing violet at its head over a tip rack">
+            <img src="img/plasma-knife.jpg" width="1024" height="768" alt="The Plasma Knife running, with cold plasma glowing violet at its head over a tip rack" loading="lazy">
+          </figure>
+          <h3><a href="https://www.augeastechnologies.com/plasma-knife" target="_blank" rel="noopener">Plasma Knife</a></h3>
+          <p class="prod-what">The Standalone is a compact cold-plasma platform for industrial, lab and OEM workflows.</p>
+          <p>Led hardware and firmware: Arduino Opta PLC, servo drive over RS485/Modbus, stepper motor.</p>
+        </article>
+        <article class="prod">
+          <figure class="prod-pic" data-slot="prod-tc" data-photo="tip-charger.jpg" data-alt="The plasma tip charger switched on, its IonField Systems touchscreen lit in a magenta frame">
+            <img src="img/tip-charger.jpg" width="929" height="697" alt="The plasma tip charger switched on, its IonField Systems touchscreen lit in a magenta frame" loading="lazy">
+          </figure>
+          <h3><a href="https://www.augeastechnologies.com/plasma-systems" target="_blank" rel="noopener">Plasma tip charger</a></h3>
+          <p class="prod-what">Cleans pipette tips with cold plasma so labs can reuse them up to 50 times.</p>
+          <p>Sourced components and ran functional PCB testing, with IonField Systems.</p>
+        </article>
+        <article class="prod">
+          <figure class="prod-pic" data-slot="prod-nfc" data-photo="nfcfind.jpg" data-alt="NFCFind tag artwork from the Everyday Pack">
+            <img src="img/nfcfind.jpg" width="717" height="538" alt="NFCFind tag artwork from the Everyday Pack" loading="lazy">
+          </figure>
+          <h3><a href="https://nfcfind.com" target="_blank" rel="noopener">NFCFind</a></h3>
+          <p class="prod-what">NFC tags and apps for asset tracking and lost-and-found. Owner details stay private.</p>
+          <p>Integrated the NFC tag hardware with the iOS and Android apps.</p>
+        </article>
+        <article class="prod">
+          <figure class="prod-pic" data-slot="prod-stovyn" data-photo="stovyn.jpg" data-alt="The Stovyn sensor unit on a steel surface">
+            <img src="img/stovyn.jpg" width="1043" height="782" alt="The Stovyn sensor unit on a steel surface" loading="lazy">
+          </figure>
+          <h3><a href="https://stovyn.com" target="_blank" rel="noopener">Stovyn</a></h3>
+          <p class="prod-what">An infrared stove monitor that warns about heat and unattended cooking, with no video streaming.</p>
+          <p>Built the hardware and firmware.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- one project opened -->
+  <section class="section section--l" id="case" aria-label="Featured project">
+    <div class="container">
+      <div class="focus case-switch">
+        <span class="focus-label" id="focus-work">Show my work for</span>
+        <div class="seg" role="group" aria-labelledby="focus-work">
+          <button type="button" id="lens-e2" data-lens-btn="e" aria-pressed="true">Embedded</button>
+          <button type="button" id="lens-f2" data-lens-btn="f" aria-pressed="false"><span class="l">FPGA &amp; RTL</span><span class="s">FPGA</span></button>
+          <button type="button" id="lens-d2" data-lens-btn="d" aria-pressed="false"><span class="l">Project delivery</span><span class="s">Delivery</span></button>
+        </div>
+      </div>
+      <article class="case-item" data-show="e d">
+        <figure class="case-photo" data-slot="case-solar" data-photo="zenith-road.jpg" data-alt="Zenith, the SolarMobil solar car, driving on a highway with a car following">
+          <img src="img/zenith-road.jpg" width="1080" height="719" alt="Zenith, the SolarMobil solar car, driving on a highway with a car following" loading="lazy">
+          <span class="inset" data-keep><img src="img/driver-display.jpg" width="640" height="512" alt="Heliark’s TouchGFX driver display on an STM32H750 discovery kit, showing speed, target speed, battery temperatures and voltages" loading="lazy"><span class="inset-cap">Heliark display</span></span>
+        </figure>
+        <div class="case-text">
+          <h2>Zenith and Heliark solar cars</h2>
+          <p class="meta">Electronics Head, <a href="https://www.solarmobilmanipal.org/" target="_blank" rel="noopener">SolarMobil Manipal</a>, Aug 2022 to Sep 2024</p>
+          <dl class="case-figs">
+            <div><dt>Data uptime, SEVC and ESVC 2023</dt><dd>99.9%</dd></div>
+            <div><dt>Average race speed</dt><dd>50 km/h</dd></div>
+            <div><dt>Data accuracy, Heliark</dt><dd>+20%</dd></div>
+            <div><dt>Energy efficiency</dt><dd>+15%</dd></div>
+          </dl>
+          <ul class="pts">
+            <li>STM32 data acquisition over CAN, with LoRa telemetry to the support car.</li>
+            <li>Heliark (BWSC’25) telemetry on a Cortex-M7 with XBee, InfluxDB and a TouchGFX display.</li>
+            <li>Designed and tested the 72 V, 96 Ah Li-ion pack and HV harness.</li>
+          </ul>
+          <p class="stack">STM32, CAN, FreeRTOS, TouchGFX, LoRa, XBee</p>
+        </div>
+      </article>
+      <article class="case-item" data-show="f" hidden>
+        <figure class="case-photo case-vis"><canvas data-fig="chirp" aria-hidden="true"></canvas></figure>
+        <div class="case-text">
+          <h2>Radar chirp generator on Zynq-7000</h2>
+          <p class="meta">Final-year thesis, Mar 2025 to Aug 2025</p>
+          <ul class="pts">
+            <li>A Direct Digital Synthesis generator for linear frequency-modulated chirps, with precise sweep control.</li>
+            <li>Verified in MATLAB with FFT power spectra, spectrograms and matched filtering.</li>
+            <li>Pulse compression confirmed the chirp’s radar resolution.</li>
+          </ul>
+          <p class="stack">Verilog, Vivado, Zynq-7000, DDS, MATLAB</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- the work as an index -->
+  <section class="section section--l" id="work" aria-labelledby="h-work">
+    <div class="container">
+      <div class="head-split">
+        <h2 id="h-work">Boards, firmware and FPGA designs</h2>
+        <p class="lead">Projects from 2022 to 2026, sorted for the role above. Open one for the details.</p>
+      </div>
+      <ol class="index" id="bento" data-sort="order">
+        <li class="row tile" data-l="e d" data-order="e:1 f:5 d:1" data-case="e d" hidden>
+          <figure class="row-pic vis" data-slot="work-solar" data-photo="zenith-campus.jpg" data-alt="Zenith parked on a campus road in Manipal">
+            <img src="img/zenith-campus.jpg" width="960" height="720" alt="" loading="lazy">
+          </figure>
+          <div class="row-main"><h3>Zenith and Heliark solar cars</h3><p>Telemetry and battery systems for two solar race cars.</p></div>
+          <p class="row-meta">SolarMobil Manipal<br>2022 to 2024</p>
+          <p class="row-stack">STM32, CAN, LoRa, XBee</p>
+          <button class="open row-go" type="button" aria-haspopup="dialog" aria-label="Details: Zenith and Heliark solar cars"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          <template>
+            <p class="d-meta">Electronics Head, SolarMobil Manipal<br>Aug 2022 to Sep 2024</p>
+            <h3>Zenith and Heliark solar cars</h3>
+            <ul class="d-stats"><li><b>99.9%</b><span>data uptime</span></li><li><b>50 km/h</b><span>average race speed</span></li><li><b>+20%</b><span>data accuracy</span></li><li><b>+15%</b><span>energy efficiency</span></li></ul>
+            <ul class="pts">
+              <li>Built Zenith’s STM32 data acquisition over CAN, with LoRa telemetry to the support car.</li>
+              <li>Redesigned telemetry for Heliark (BWSC’25) on a Cortex-M7 with XBee, InfluxDB and a TouchGFX driver display.</li>
+              <li>Designed and tested the 72 V, 96 Ah Li-ion pack and HV wiring harness.</li>
+            </ul>
+            <p class="d-stack">STM32, CAN, FreeRTOS, TouchGFX, LoRa, XBee</p>
+          </template>
+        </li>
+        <li class="row tile" data-l="e" data-order="e:2 f:4 d:3">
+          <figure class="row-pic vis" data-slot="work-drone" data-photo="drone-board.jpg" data-alt="3D render or photo of the drone mainboard">
+            <img src="img/drone-board.jpg" width="1600" height="1141" alt="" loading="lazy">
+            <span class="stock-tag" data-keep>Stock</span>
+          </figure>
+          <div class="row-main"><h3>Follow-me drone board</h3><p>Flight controller and four ESCs on one PCB.</p></div>
+          <p class="row-meta">Personal project<br>2026, in progress</p>
+          <p class="row-stack">STM32H743, INAV, KiCad</p>
+          <button class="open row-go" type="button" aria-haspopup="dialog" aria-label="Details: Follow-me drone board"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          <template>
+            <p class="d-meta">Personal project, 2026. In progress.</p>
+            <h3>Follow-me drone board</h3>
+            <ul class="pts">
+              <li>One board with an STM32H743 flight controller and four brushless ESCs, for 1S or 2S packs.</li>
+              <li>Targets INAV; the same MCU can run Betaflight, ArduPilot and PX4.</li>
+              <li>XIAO ESP32-S3 Sense for vision. Requirements are frozen; it will be released as open hardware (CERN-OHL-S-2.0).</li>
+            </ul>
+            <p class="d-stack">STM32H743, BLDC ESCs, INAV, KiCad, ESP32-S3</p>
+          </template>
+        </li>
+        <li class="row tile" data-l="e" data-order="e:3 f:6 d:4">
+          <figure class="row-pic vis" data-slot="work-biofloc" data-photo="biofloc.jpg" data-alt="The biofloc tank with labeled sensors, pump, temperature control unit and ESP32-S3 board">
+            <img src="img/biofloc.jpg" width="743" height="434" alt="" loading="lazy">
+          </figure>
+          <div class="row-main"><h3>IoT biofloc controller</h3><p>Water-quality control for aquaculture.</p></div>
+          <p class="row-meta">Research project<br>2024</p>
+          <p class="row-stack">ESP32-S3, sensors, Blynk</p>
+          <button class="open row-go" type="button" aria-haspopup="dialog" aria-label="Details: IoT biofloc controller"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          <template>
+            <p class="d-meta">Research project<br>Jan 2024 to Dec 2024</p>
+            <h3>IoT biofloc controller</h3>
+            <ul class="pts">
+              <li>An ESP32-S3 reads TDS, pH and dissolved-oxygen sensors in real time.</li>
+              <li>It drives pumps, Peltier cooling and a servo fish feeder automatically.</li>
+              <li>Conditions are monitored on a Blynk IoT dashboard.</li>
+            </ul>
+            <p class="d-stack">ESP32-S3, sensors, actuators, Blynk</p>
+          </template>
+        </li>
+        <li class="row tile" data-l="f e" data-order="e:4 f:2 d:5">
+          <figure class="row-pic vis" data-slot="work-nfc" data-photo="st-noida.jpg" data-alt="Sri Karthik at the STMicroelectronics campus in Greater Noida">
+            <img src="img/st-noida.jpg" width="1280" height="720" alt="" loading="lazy">
+          </figure>
+          <div class="row-main"><h3>NFC transmitter on an FPGA</h3><p>Verilog on Artix-7, reaching 1 m range.</p></div>
+          <p class="row-meta">STMicroelectronics<br>2024</p>
+          <p class="row-stack">Verilog, Artix-7, NFC</p>
+          <button class="open row-go" type="button" aria-haspopup="dialog" aria-label="Details: NFC transmitter on an FPGA"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          <template>
+            <p class="d-meta">Digital Design Intern, STMicroelectronics<br>May 2024 to Jul 2024</p>
+            <h3>NFC transmitter on an FPGA</h3>
+            <ul class="d-stats"><li><b>1 m</b><span>communication range</span></li></ul>
+            <ul class="pts">
+              <li>Wrote the transmitter in Verilog on an Artix-7: ASK modulation with Modified Miller encoding.</li>
+              <li>Validated it against an STM32-G0B1RE with the X-NUCLEO-NFC06A1 board.</li>
+              <li>Used an Android phone as the receiver to prove the full link.</li>
+            </ul>
+            <p class="d-stack">Verilog, Artix-7, NFC, STM32</p>
+          </template>
+        </li>
+        <li class="row tile" data-l="f" data-order="e:5 f:1 d:6" data-case="f">
+          <figure class="row-pic vis"><canvas data-fig="chirp" aria-hidden="true"></canvas></figure>
+          <div class="row-main"><h3>Radar chirp generator</h3><p>DDS on Zynq-7000, verified in MATLAB.</p></div>
+          <p class="row-meta">Final-year thesis<br>2025</p>
+          <p class="row-stack">Verilog, Vivado, Zynq-7000</p>
+          <button class="open row-go" type="button" aria-haspopup="dialog" aria-label="Details: Radar chirp generator"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          <template>
+            <p class="d-meta">Final-year thesis<br>Mar 2025 to Aug 2025</p>
+            <h3>Radar chirp generator on Zynq-7000</h3>
+            <ul class="pts">
+              <li>A Direct Digital Synthesis generator for linear frequency-modulated chirps, with precise sweep control.</li>
+              <li>Verified in MATLAB with FFT power spectra, spectrograms and matched filtering.</li>
+              <li>Pulse compression confirmed the chirp’s radar resolution.</li>
+            </ul>
+            <p class="d-stack">Verilog, Vivado, Zynq-7000, DDS, MATLAB</p>
+          </template>
+        </li>
+        <li class="row tile" data-l="d" data-order="e:6 f:7 d:2">
+          <figure class="row-pic vis" data-slot="work-insulinai" data-photo="insulinai.jpg" data-alt="An InsulinAI app screen or the Emerge21 award">
+            <img src="img/insulinai.jpg" width="1600" height="1067" alt="" loading="lazy">
+            <span class="stock-tag" data-keep>Stock</span>
+          </figure>
+          <div class="row-main"><h3>InsulinAI</h3><p>Insulin-dosage tool, 1st place at Emerge21.</p></div>
+          <p class="row-meta">Health-tech project<br>2025</p>
+          <p class="row-stack">Product build</p>
+          <button class="open row-go" type="button" aria-haspopup="dialog" aria-label="Details: InsulinAI"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          <template>
+            <p class="d-meta">Health-tech project, 2025</p>
+            <h3>InsulinAI</h3>
+            <ul class="pts">
+              <li>An insulin-dosage recommendation tool, built end to end.</li>
+              <li>Won 1st place in the Professionals category at Emerge21 (InsideIIM × Emergent), Nov 2025.</li>
+            </ul>
+            <p class="d-stack">Health tech, product build</p>
+          </template>
+        </li>
+        <li class="row tile" data-l="f" data-order="e:7 f:3 d:7">
+          <figure class="row-pic vis"><canvas data-fig="halftone" aria-hidden="true"></canvas></figure>
+          <div class="row-main"><h3>RGB to halftone in Verilog</h3><p>Floyd-Steinberg dithering as hardware.</p></div>
+          <p class="row-meta">AISSM, NCKU Taiwan<br>2024</p>
+          <p class="row-stack">Verilog, Synopsys VCS</p>
+          <button class="open row-go" type="button" aria-haspopup="dialog" aria-label="Details: RGB to halftone in Verilog"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          <template>
+            <p class="d-meta">AISSM final project, National Cheng Kung University<br>Jul 2024</p>
+            <h3>RGB to halftone in Verilog</h3>
+            <ul class="pts">
+              <li>An FSM pipeline turns 24-bit RGB into 8-bit grayscale, then a 1-bit halftone with Floyd-Steinberg error diffusion.</li>
+              <li>Fixed-point arithmetic with configurable rounding.</li>
+              <li>Simulated in Synopsys VCS, synthesized with Design Compiler, checked against golden references.</li>
+            </ul>
+            <p class="d-stack">Verilog, FSM, Synopsys VCS, Design Compiler</p>
+          </template>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- leading teams -->
+  <section class="section" id="team" aria-labelledby="h-team">
+    <div class="container">
+      <div class="head-split">
+        <h2 id="h-team">Leading teams</h2>
+        <div class="pts-wrap">
+          <p class="lead">Two years running the electronics team of a student solar car.</p>
+          <ul class="pts" style="margin-top: var(--space-md)">
+            <li>Led 20 engineers across embedded and powertrain for the Zenith solar car.</li>
+            <li>Took Zenith through ESVC’23, SEVC’23 and SEVC’24, winning four team awards.</li>
+            <li>Ran <a href="https://conference.manipal.edu/SEVC2024/" target="_blank" rel="noopener">SEVC’24</a> with 300 participants and 150 volunteers, and judged electrical inspections.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="gal">
+        <figure class="g-full" data-slot="sevc" data-photo="sevc-team.jpg" data-alt="Sri Karthik with the SolarMobil junior team in blue team shirts on the SEVC grounds in Manipal">
+          <img src="img/sevc-team.jpg" width="1280" height="591" alt="Sri Karthik with the SolarMobil junior team in blue team shirts on the SEVC grounds in Manipal" loading="lazy">
+          <figcaption data-keep>With the junior team at SEVC, Manipal</figcaption>
+        </figure>
+        <figure data-slot="team-senior" data-photo="zenith-team-esvc.jpg" data-alt="Sri Karthik with the SolarMobil senior team behind Zenith at ESVC 2023, at night">
+          <img src="img/zenith-team-esvc.jpg" width="1024" height="768" alt="Sri Karthik with the SolarMobil senior team behind Zenith at ESVC 2023, at night" loading="lazy">
+          <figcaption data-keep>With the senior team at ESVC 2023</figcaption>
+        </figure>
+        <figure data-slot="team" data-photo="team-solarmobil.jpg" data-alt="The SolarMobil Manipal team in black team shirts outside the team workshop">
+          <img src="img/team-solarmobil.jpg" width="1280" height="852" alt="The SolarMobil Manipal team in black team shirts outside the team workshop" loading="lazy">
+          <figcaption data-keep>SolarMobil team at the workshop</figcaption>
+        </figure>
+        <figure data-slot="zenith-awards" data-photo="zenith-awards.jpg" data-alt="The SolarMobil team behind Zenith with trophies and award boards from ESVC 2023, at night">
+          <img src="img/zenith-awards.jpg" width="1280" height="960" alt="The SolarMobil team behind Zenith with trophies and award boards from ESVC 2023, at night" loading="lazy">
+          <figcaption data-keep>Zenith with its ESVC 2023 awards</figcaption>
+        </figure>
+        <figure class="g-half" data-slot="heliark-sunset" data-photo="heliark-sunset.jpg" data-alt="Heliark, SolarMobil’s solar car, with a driver aboard at sunset at ESVC 2025">
+          <img src="img/heliark-sunset.jpg" width="1280" height="720" alt="Heliark, SolarMobil’s solar car, with a driver aboard at sunset at ESVC 2025" loading="lazy">
+          <figcaption data-keep>Heliark at ESVC 2025</figcaption>
+        </figure>
+        <figure class="g-half" data-slot="heliark-esvc" data-photo="heliark-esvc.jpg" data-alt="Heliark parked under an inflatable arch on the ESVC 2025 grounds">
+          <img src="img/heliark-esvc.jpg" width="1060" height="795" alt="Heliark parked under an inflatable arch on the ESVC 2025 grounds" loading="lazy">
+          <figcaption data-keep>Heliark, built for BWSC’25</figcaption>
+        </figure>
+        <figure data-slot="ncku" data-photo="aissm-cohort.jpg" data-alt="The AISSM 2024 semiconductor summer school cohort at National Cheng Kung University">
+          <img src="img/aissm-cohort.jpg" width="1280" height="724" alt="The AISSM 2024 semiconductor summer school cohort at National Cheng Kung University" loading="lazy">
+          <figcaption data-keep>AISSM 2024 cohort, NCKU Taiwan</figcaption>
+        </figure>
+        <figure data-slot="cleanroom" data-photo="cleanroom.jpg" data-alt="AISSM students in cleanroom suits on a guided cleanroom tour in Taiwan">
+          <img src="img/cleanroom.jpg" width="1280" height="960" alt="AISSM students in cleanroom suits on a guided cleanroom tour in Taiwan" loading="lazy">
+          <figcaption data-keep>Cleanroom tour, AISSM 2024</figcaption>
+        </figure>
+        <figure data-slot="tsri" data-photo="tsri.jpg" data-alt="Sri Karthik smiling at the reception of the Taiwan Semiconductor Research Institute">
+          <img src="img/tsri.jpg" width="1280" height="960" alt="Sri Karthik smiling at the reception of the Taiwan Semiconductor Research Institute" loading="lazy">
+          <figcaption data-keep>At TSRI, Taiwan</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+  <!-- experience -->
+  <section class="section" id="experience" aria-labelledby="h-xp">
+    <div class="container">
+      <div class="head-split">
+        <h2 id="h-xp">Experience</h2>
+        <p class="lead">Open a role to see what I did there.</p>
+      </div>
+      <div class="xp">
+        <details class="job" data-l="e d">
+          <summary>
+            <span class="job-when">Dec 2025 to present</span>
+            <span><span class="job-role">Electronics Engineer</span><span class="job-org">Augeas Technologies, Hyderabad</span></span>
+            <span class="job-sum">Cold-plasma hardware with IonField Systems, Stovyn, NFCFind and an edge-AI board.</span>
+            <span class="chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          </summary>
+          <ul class="pts">
+            <li>Designed a production-ready 6-layer HDI board for an ESP32-S3 edge-AI device, with RF switching and ultra-low-power sleep.</li>
+            <li>Led hardware and firmware for the Plasma Knife Standalone: Arduino Opta PLC, servo drive over RS485/Modbus, stepper motor.</li>
+            <li>Sourced components and ran functional PCB testing for cold-plasma modules built with IonField Systems.</li>
+            <li>Integrated NFC tag hardware with iOS and Android apps for NFCFind asset tracking.</li>
+            <li>Built the hardware and firmware for Stovyn, an infrared stove monitor.</li>
+          </ul>
+        </details>
+        <details class="job" data-l="f e">
+          <summary>
+            <span class="job-when">May 2024 to Jul 2024</span>
+            <span><span class="job-role">Digital Design Intern</span><span class="job-org">STMicroelectronics, Greater Noida</span></span>
+            <span class="job-sum">Built an NFC transmitter in Verilog on an Artix-7 FPGA, reaching 1 m range.</span>
+            <span class="chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          </summary>
+          <ul class="pts">
+            <li>ASK modulation with Modified Miller encoding, written in Verilog.</li>
+            <li>Validated against an STM32-G0B1RE with the X-NUCLEO-NFC06A1 board.</li>
+            <li>Used an Android phone as the receiver to prove the full link.</li>
+          </ul>
+        </details>
+        <details class="job" data-l="e">
+          <summary>
+            <span class="job-when">Jun 2023 to Jul 2023</span>
+            <span><span class="job-role">Project Intern</span><span class="job-org">Sensate Interface Devices, Hyderabad</span></span>
+            <span class="job-sum">Validated sensors and BLE on nRF52840 health-monitoring prototypes.</span>
+            <span class="chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          </summary>
+          <ul class="pts">
+            <li>Tested ECG, SpO2 and temperature sensors and BLE with evaluation boards and lab instruments.</li>
+            <li>Debugged prototype firmware on the nRF52840 using the nRF52 DK.</li>
+            <li>Worked on the LiPo battery-management circuit design.</li>
+            <li>Worked with Apollo Microsystems and other external experts on prototype reliability.</li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- skills -->
+  <section class="section" id="skills" aria-labelledby="h-skills">
+    <div class="container">
+      <div class="head-split"><h2 id="h-skills">Skills</h2><p class="lead" data-show="e">Highlighted for embedded roles.</p><p class="lead" data-show="f" hidden>Highlighted for FPGA and RTL roles.</p><p class="lead" data-show="d" hidden>Highlighted for project delivery roles.</p></div>
+      <div class="skills" data-sort="order">
+        <div class="sk" data-l="e" data-order="e:1 f:4 d:4"><h3>Firmware</h3><p>Embedded C, FreeRTOS, TouchGFX, MicroPython, Python</p></div>
+        <div class="sk" data-l="e" data-order="e:2 f:5 d:3"><h3>Hardware design</h3><p>Altium, KiCad, LTspice, 6-layer HDI, RF routing, LiPo and Li-ion power</p></div>
+        <div class="sk" data-l="e f" data-order="e:3 f:3 d:5"><h3>Microcontrollers</h3><p>nRF52840, ESP32-S3, STM32 F4, G0 and H7, NXP S32K, Arduino Opta</p></div>
+        <div class="sk" data-l="e" data-order="e:4 f:6 d:6"><h3>Wireless and buses</h3><p>BLE, NFC, LoRa, XBee, CAN, RS485/Modbus, SPI, I2C, UART</p></div>
+        <div class="sk" data-l="f" data-order="e:5 f:1 d:7"><h3>FPGA and DSP</h3><p>Verilog, Zynq-7000, Artix-7, Altera MAX 10, Vivado, Synopsys VCS, Design Compiler, MATLAB</p></div>
+        <div class="sk" data-l="d" data-order="e:6 f:2 d:1"><h3>Delivery</h3><p>Team leadership, supplier sourcing, test planning, partner coordination, event operations</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- education and awards -->
+  <section class="section" id="education" aria-labelledby="h-ea">
+    <div class="container">
+      <div class="head-split"><h2 id="h-ea">Education and awards</h2></div>
+      <div class="ea">
+        <div>
+          <h3>Education</h3>
+          <ul class="rows">
+            <li><span>B.Tech, Electronics and Communication, Minor in Embedded Systems<small>Manipal Institute of Technology</small></span><span class="yr">2021 to 2025</span></li>
+            <li><span>AISSM summer school in digital IC design<small>National Cheng Kung University, Taiwan</small></span><span class="yr">2024</span></li>
+            <li><span>Foundational Programme in Data Science and Programming<small>IIT Madras</small></span><span class="yr">2022</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Awards</h3>
+          <table class="awards">
+            <tbody>
+              <tr><th scope="row">2025</th><td>1st place, Emerge21 Professionals category, for InsulinAI</td></tr>
+              <tr><th scope="row">2024</th><td>NCKU AISSM scholarship, the only bachelor’s student from India nominated (50%, USD 1,200)</td></tr>
+              <tr><th scope="row">2023</th><td>Four team awards with SolarMobil at ESVC and SEVC</td></tr>
+              <tr><th scope="row">2023</th><td>4th place, Vedanth 13.0 national exhibition, TechTatva’23</td></tr>
+              <tr><th scope="row">2022</th><td>1st place, Electrobuzz, TechTatva’22</td></tr>
+            </tbody>
+          </table>
+          <p class="fine">Certifications: ARM Cortex-M Overview and Introduction to Programming with MATLAB (Coursera), IELTS Band 7. Languages: English, Telugu, Hindi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+</main>
+
+<footer class="mast" id="contact" aria-labelledby="h-contact">
+  <div class="container">
+    <div class="mast-top">
+      <h2 id="h-contact">Hiring an embedded engineer?</h2>
+      <div class="mast-contact">
+        <p class="lead">Send me an email about the role.</p>
+        <div class="mail">
+          <a href="mailto:srikarthikchigurupati@gmail.com" id="email-text">srikarthikchigurupati@gmail.com</a>
+          <button type="button" class="btn btn--quiet btn--sm" id="copy-email">Copy email</button>
+        </div>
+        <ul class="mast-links">
+          <li><a href="Sri_Karthik_Chigurupati_Resume.pdf" download data-resume>Download resume</a></li>
+          <li><a href="https://www.linkedin.com/in/sri-karthik-c-a5b190215/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/srikarthik0601" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="mast-word" aria-hidden="true">Sri Karthik Chigurupati</p>
+    <div class="mast-base">
+      <nav class="mast-nav" aria-label="Sections">
+        <a href="#top" data-scroll>Back to top</a>
+        <a href="#work" data-scroll>Work</a>
+        <a href="#experience" data-scroll>Experience</a>
+        <a href="#team" data-scroll>Leadership</a>
+        <a href="#contact" data-scroll>Contact</a>
+      </nav>
+      <span>© 2026 Sri Karthik Chigurupati. Updated 4 Nov 2026.</span>
+    </div>
+    <p class="credits" id="credits" data-credits>Photographs: circuit board in the header by <a href="https://commons.wikimedia.org/wiki/File:CanoScan_5600F_main_PCB_top_view.jpg" target="_blank" rel="noopener">Mister rf</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>), recolored in thermal colors and shared under the same license; quadcopter by <a href="https://commons.wikimedia.org/wiki/File:XLabs_Shrike_V2_200_mm_quadcopter_frame_with_components.jpg" target="_blank" rel="noopener">Lucasbosch</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>); insulin pump by <a href="https://commons.wikimedia.org/wiki/File:Medtronic_MiniMed_780G_insulinpump.jpg" target="_blank" rel="noopener">MailariX</a> (CC BY-SA 4.0). Pictures marked stock stand in until my own are added. Product photos: <a href="https://www.augeastechnologies.com/" target="_blank" rel="noopener">Augeas Technologies</a>. Heliark photos: <a href="https://www.solarmobilmanipal.org/" target="_blank" rel="noopener">SolarMobil Manipal</a>. All other photographs are mine or my teams’.</p>
+  </div>
+</footer>
+
+<dialog class="detail" id="detail" aria-labelledby="detail-title">
+  <button type="button" class="d-close" id="detail-close" aria-label="Close project details">
+    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3 3 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <div class="d-media" id="detail-media"></div>
+  <div class="d-body" id="detail-body"></div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(`[data-slot="${k}"]`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
+document.querySelectorAll('[data-slot] img').forEach((i) => { if (i.complete && !i.naturalWidth) i.remove(); else i.addEventListener('error', () => i.remove(), { once: true }); });</script>
+<script>
+(function(){
+  "use strict";
+  var LENS_BY_HASH = {embedded:"e", fpga:"f", delivery:"d"};
+  var HASH_BY_LENS = {e:"embedded", f:"fpga", d:"delivery"};
+  var RESUME = "Sri_Karthik_Chigurupati_Resume.pdf";
+  var REDUCED = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var current = "e";
+  var $ = function(s, r){ return (r || document).querySelector(s); };
+  var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  // ---------- role focus ----------
+  $$("[data-sort] > *").forEach(function(el, i){ el.dataset.i = i; });
+  function rank(el, k){
+    var m = (el.dataset.order || "").match(new RegExp("\\b" + k + ":(\\d+)"));
+    return m ? +m[1] : 99;
+  }
+  function has(el, k){ return (el.dataset.l || "").split(" ").indexOf(k) > -1; }
+  function applyLens(k, animate){
+    current = k;
+    $$("[data-lens-btn]").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.lensBtn === k)); });
+    $$("[data-show]").forEach(function(el){ el.hidden = el.dataset.show.split(" ").indexOf(k) < 0; });
+    $$("[data-l]").forEach(function(el){ el.classList.toggle("on", has(el, k)); });
+    $$("[data-case]").forEach(function(el){ el.hidden = el.dataset.case.split(" ").indexOf(k) > -1; });
+    $$("[data-sort]").forEach(function(box){
+      var kids = Array.prototype.slice.call(box.children);
+      kids.sort(function(a, b){ return rank(a, k) - rank(b, k) || a.dataset.i - b.dataset.i; });
+      kids.forEach(function(c){ box.appendChild(c); });
+    });
+    if (animate) {
+      var list = $("#bento");
+      list.classList.remove("shuffle"); void list.offsetWidth; list.classList.add("shuffle");
+      drawAll();
+    }
+  }
+  function setHash(k){ try { history.replaceState(null, "", "#" + HASH_BY_LENS[k]); } catch (e) {} }
+  $$("[data-lens-btn]").forEach(function(b){
+    b.addEventListener("click", function(){
+      if (b.dataset.lensBtn === current) return;
+      applyLens(b.dataset.lensBtn, true);
+      setHash(b.dataset.lensBtn);
+    });
+  });
+
+  $$("[data-scroll]").forEach(function(a){
+    a.addEventListener("click", function(e){
+      var id = a.getAttribute("href").slice(1), t = document.getElementById(id);
+      if (!t) return;
+      e.preventDefault();
+      if (id === "top") window.scrollTo({top:0}); else t.scrollIntoView({block:"start"});
+    });
+  });
+
+  // ---------- toast, copy, resume ----------
+  var toastEl = $("#toast"), toastTimer;
+  function toast(msg){
+    toastEl.textContent = msg; toastEl.classList.add("show");
+    clearTimeout(toastTimer); toastTimer = setTimeout(function(){ toastEl.classList.remove("show"); }, 2600);
+  }
+  $("#copy-email").addEventListener("click", function(){
+    var text = "srikarthikchigurupati@gmail.com";
+    function fallback(){
+      var r = document.createRange(); r.selectNodeContents($("#email-text"));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      toast("Email selected. Press Ctrl+C or Cmd+C to copy.");
+    }
+    try { navigator.clipboard.writeText(text).then(function(){ toast("Email copied"); }, fallback); }
+    catch (e) { fallback(); }
+  });
+  var inClaude = !!(window.claude && typeof window.claude.use === "function");
+  var dlReady = inClaude ? window.claude.use("downloads").catch(function(){ return null; }) : null;
+  $$("[data-resume]").forEach(function(a){
+    a.addEventListener("click", function(e){
+      if (!inClaude) return;
+      e.preventDefault();
+      dlReady.then(function(dl){
+        if (!dl) {
+          var win = null;
+          try { win = window.open(RESUME, "_blank"); } catch (err) {}
+          if (!win) toast("Downloads are off in this view. Email me and I will send the PDF.");
+          return;
+        }
+        return fetch(RESUME).then(function(r){ if (!r.ok) throw {code:"fetch"}; return r.blob(); })
+          .then(function(blob){ return dl.save({filename: RESUME, data: blob}); })
+          .then(function(){ toast("Resume saved"); });
+      }).catch(function(err){
+        if (err && err.code === "declined") return;
+        if (err && err.code === "rate_limited") { toast("A save prompt is already open."); return; }
+        toast("The resume could not be saved here. Email me and I will send it.");
+      });
+    });
+  });
+
+  // ---------- colours come from the tokens; the ironbow ramp is the thermal camera's own scale ----------
+  function token(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+  var STOPS = [[0,[8,4,22]],[0.18,[42,14,92]],[0.38,[142,27,122]],[0.58,[224,68,43]],[0.78,[255,122,26]],[0.92,[255,210,63]],[1,[255,246,200]]];
+  var LUT = new Uint8ClampedArray(256 * 3);
+  (function(){
+    for (var i = 0; i < 256; i++){
+      var t = i / 255, k = 0;
+      while (k < STOPS.length - 2 && t > STOPS[k + 1][0]) k++;
+      var a = STOPS[k], b = STOPS[k + 1], u = (t - a[0]) / (b[0] - a[0]);
+      for (var c = 0; c < 3; c++) LUT[i * 3 + c] = a[1][c] + (b[1][c] - a[1][c]) * u;
+    }
+  })();
+  function ironbow(t){ var i = Math.max(0, Math.min(255, Math.round(t * 255))) * 3; return "rgb(" + LUT[i] + "," + LUT[i + 1] + "," + LUT[i + 2] + ")"; }
+
+  // ---------- generated visuals for the two signal-processing projects ----------
+  var FIG = {
+    chirp: function(c, w, h){
+      c.fillStyle = token("--color-paper-2"); c.fillRect(0, 0, w, h);
+      c.strokeStyle = token("--color-rule"); c.lineWidth = 1;
+      for (var i = 1; i < 12; i++){ var x = w * i / 12; c.beginPath(); c.moveTo(x, 0); c.lineTo(x, h); c.stroke(); }
+      for (var j = 1; j < 7; j++){ var y = h * j / 7; c.beginPath(); c.moveTo(0, y); c.lineTo(w, y); c.stroke(); }
+      var mid = h * 0.5, amp = h * 0.3, N = Math.max(600, Math.floor(w * 3)), prev = null;
+      c.lineWidth = Math.max(1.5, w / 260); c.lineCap = "round";
+      for (var k = 0; k <= N; k++){
+        var u = k / N, ph = 2 * Math.PI * (1.5 * u + 9 * u * u), px = w * 0.06 + u * w * 0.88, py = mid - Math.sin(ph) * amp;
+        if (prev){ c.strokeStyle = ironbow(0.35 + 0.65 * u); c.beginPath(); c.moveTo(prev[0], prev[1]); c.lineTo(px, py); c.stroke(); }
+        prev = [px, py];
+      }
+    },
+    halftone: function(c, w, h){
+      var s = Math.max(2, Math.round(w / 220)), W = Math.floor(w / s), H = Math.floor(h / s), g = new Float32Array(W * H);
+      var cx = W * 0.6, cy = H * 0.5, r = Math.min(W, H) * 0.36, L = [-0.55, -0.6, 0.58];
+      for (var y = 0; y < H; y++) for (var x = 0; x < W; x++){
+        var v = 0.92 - 0.55 * (x / W);
+        var nx = (x - cx) / r, ny = (y - cy) / r, d = nx * nx + ny * ny;
+        if (d < 1){ var nz = Math.sqrt(1 - d); v = 0.1 + 0.9 * Math.max(0, nx * L[0] + ny * L[1] + nz * L[2]); }
+        g[y * W + x] = v;
+      }
+      var split = Math.floor(W * 0.32);
+      for (y = 0; y < H; y++) for (x = 0; x < split; x++){ c.fillStyle = ironbow(g[y * W + x]); c.fillRect(x * s, y * s, s, s); }
+      c.fillStyle = token("--color-paper-2"); c.fillRect(split * s, 0, w - split * s, h);
+      c.fillStyle = token("--color-accent");
+      for (y = 0; y < H; y++) for (x = split; x < W; x++){
+        var i = y * W + x, old = g[i], nw = old < 0.5 ? 0 : 1, err = old - nw;
+        if (nw) c.fillRect(x * s, y * s, s, s);
+        if (x + 1 < W) g[i + 1] += err * 7 / 16;
+        if (y + 1 < H){ if (x > split) g[i + W - 1] += err * 3 / 16; g[i + W] += err * 5 / 16; if (x + 1 < W) g[i + W + 1] += err / 16; }
+      }
+      c.fillStyle = token("--color-ink"); c.fillRect(split * s - 1, 0, 2, h);
+    }
+  };
+  function drawCanvas(cv){
+    var w = cv.clientWidth, h = cv.clientHeight;
+    if (!w || !h) return;
+    var dpr = Math.min(2, window.devicePixelRatio || 1);
+    cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+    var c = cv.getContext("2d"); c.setTransform(dpr, 0, 0, dpr, 0, 0);
+    try { FIG[cv.dataset.fig](c, w, h); } catch (e) {}
+  }
+  function drawAll(){ $$("canvas[data-fig]").forEach(drawCanvas); }
+
+  var start = (location.hash || "").slice(1).toLowerCase();
+  applyLens(LENS_BY_HASH[start] || "e", false);
+  if (!LENS_BY_HASH[start] && start && document.getElementById(start)) {
+    setTimeout(function(){ document.getElementById(start).scrollIntoView({block:"start"}); }, 0);
+  }
+  window.addEventListener("hashchange", function(){
+    var h = (location.hash || "").slice(1).toLowerCase();
+    if (LENS_BY_HASH[h] && LENS_BY_HASH[h] !== current) applyLens(LENS_BY_HASH[h], true);
+  });
+  drawAll();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawAll);
+  if (window.ResizeObserver){
+    var ro = new ResizeObserver(function(entries){ entries.forEach(function(en){ drawCanvas(en.target); }); });
+    $$("canvas[data-fig]").forEach(function(cv){ ro.observe(cv); });
+  } else { window.addEventListener("resize", drawAll); }
+
+  // ---------- project details ----------
+  var dlg = $("#detail"), media = $("#detail-media"), body = $("#detail-body"), lastOpener = null;
+  function openDetail(tile, opener){
+    lastOpener = opener;
+    media.innerHTML = ""; body.innerHTML = "";
+    var vis = $(".vis", tile), cv = $("canvas", vis);
+    if (cv) {
+      var fresh = document.createElement("canvas"); fresh.dataset.fig = cv.dataset.fig; fresh.setAttribute("aria-hidden", "true");
+      media.appendChild(fresh);
+    } else {
+      var copy = vis.cloneNode(true); copy.className = ""; copy.removeAttribute("data-slot"); media.appendChild(copy);
+    }
+    body.appendChild($("template", tile).content.cloneNode(true));
+    var h = $("h3", body); if (h) h.id = "detail-title";
+    if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+    var mc = $("canvas", media); if (mc) drawCanvas(mc);
+    $("#detail-close").focus();
+  }
+  function closeDetail(){ if (dlg.open) dlg.close(); }
+  dlg.addEventListener("close", function(){ if (lastOpener) lastOpener.focus(); });
+  $("#detail-close").addEventListener("click", closeDetail);
+  dlg.addEventListener("click", function(e){ if (e.target === dlg) closeDetail(); });
+  $$(".tile .open").forEach(function(btn){
+    btn.addEventListener("click", function(){ openDetail(btn.closest(".tile"), btn); });
+  });
+})();
+</script>
+</body></html>
